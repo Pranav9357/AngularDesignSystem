@@ -1,0 +1,33 @@
+<div class="form_auth">
+    <div class="form_inside">
+        <div class="form_header">
+            <h3 class="form_title">Login</h3>
+        </div>
+
+        <div class="form_body" [formGroup]="loginForm">
+            <mat-form-field appearance="outline" class="form_field">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Email Address*" class="form_input" formControlName="email">
+                <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">
+                    {{getEmailErrorMessage()}}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" matInput class="form_field">
+                <mat-label>Password</mat-label> 
+                <input matInput type="password" placeholder="Password*" class="form_input" formControlName="password">
+                <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">
+                    {{getPasswordErrorMessage()}}
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form_button">
+            <button mat-flat-button color="primary" class="btn button_field">Login</button>
+        </div>
+
+        <div class="login_link">
+            <a routerLink="signUp">No Account? <strong>Create one here</strong></a>
+        </div>
+    </div>
+</div>

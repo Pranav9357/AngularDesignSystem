@@ -1,0 +1,41 @@
+<div class="form_auth">
+    <div class="form_inside">
+        <div class="form_header">
+            <h3 class="form_title">Sign Up</h3>
+        </div>
+
+        <div class="form_body" [formGroup]="signupForm">
+            <mat-form-field appearance="outline" class="form_field">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Email Address*" class="form_input" formControlName="email">
+                <mat-error *ngIf="signupForm.controls['email'].touched && signupForm.controls['email'].invalid">
+                    {{getEmailErrorMessage()}}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" matInput class="form_field">
+                <mat-label>Password</mat-label> 
+                <input matInput type="password" placeholder="Password*" class="form_input" minlength="6" formControlName="password">
+                <mat-error *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].invalid">
+                    {{getPasswordErrorMessage()}}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" matInput class="form_field">
+                <mat-label>Confirm Password</mat-label> 
+                <input matInput type="password" placeholder="Confirm Password*" class="form_input" minlength="6" formControlName="confirmPassword">
+                <mat-error *ngIf="signupForm.controls['confirmPassword'].touched && signupForm.controls['confirmPassword'].invalid">
+                    {{getConfirmPasswordErrorMessage()}}
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form_button">
+            <button mat-flat-button color="primary" class="btn button_field">Sign Up</button>
+        </div>
+
+        <div class="login_link">
+            <a routerLink="">Already have an Account? <strong>Login</strong></a>
+        </div>
+    </div>
+</div>

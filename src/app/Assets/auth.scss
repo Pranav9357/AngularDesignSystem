@@ -1,0 +1,75 @@
+@import './mixins.scss';
+
+// default css for login and signup
+
+// form css
+.form_auth {
+    height: 100vh;
+    @include align-justify-center;
+
+    .form_inside {
+        width: 35%;
+        margin: auto;
+        padding-bottom: 24px !important;
+        display: block;
+        background: rgb(253, 253, 253);
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+        // form header css
+        .form_header {
+            padding: 24px 0;
+
+            .form_title {
+                text-align: center;
+                font-weight: 200;
+                font-size: 2.5em;
+            }
+        }
+
+        // form body css
+        .form_body {
+            padding: 0 24px;
+
+            .form_field {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .form_input {
+                margin-top: 24px;
+                margin: 0;
+            }
+        }
+
+        // form button css
+        .form_button {
+            padding: 24px;
+
+            .btn {
+                display: block;
+                width: 100%;
+                padding: 2% !important;
+                font-size: 1.5em;
+                font-weight: 200;
+            }
+
+            .button_field {
+                margin-bottom: 15px;
+                color: #fff;
+            }
+        }
+
+        // form link css
+        .login_link {
+            padding: 10px auto;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: rgb(42, 125, 219);
+            }
+        }
+    }
+}
