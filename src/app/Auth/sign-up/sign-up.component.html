@@ -24,6 +24,9 @@
             <mat-form-field appearance="outline" matInput class="form_field">
                 <mat-label>Confirm Password</mat-label> 
                 <input matInput type="password" placeholder="Confirm Password*" class="form_input" minlength="6" formControlName="confirmPassword">
+                <mat-error *ngIf="signupForm.controls['confirmPassword'].errors?.['confirmedValidator']">
+                    {{passwordDoesNotMatch()}}
+                </mat-error>
                 <mat-error *ngIf="signupForm.controls['confirmPassword'].touched && signupForm.controls['confirmPassword'].invalid">
                     {{getConfirmPasswordErrorMessage()}}
                 </mat-error>
